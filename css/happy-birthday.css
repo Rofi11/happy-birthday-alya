@@ -1,0 +1,267 @@
+/* Reset CSS */
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-color: #000;
+}
+
+/* main container */
+.main-container {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+/* pengaruhi tulisan nya keseluruhan */
+.text {
+  font-size: 6rem;
+  font-weight: bold;
+  gap: 1rem;
+  color: rgb(255, 0, 255);
+  /* border: 1px solid red; */
+}
+
+/* ngasih jarak antar span kata, biar lebih elegan */
+.text span {
+  /* border: 1px solid blue; */
+  margin-right: 20px;
+}
+
+/* container terpisah */
+.main-container .happy {
+  text-align: center;
+  /* border: 1px solid red; */
+  margin-bottom: 20px;
+}
+
+/* menerapkan animation */
+/* Default span styles */
+.text span {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInOut 1.5s ease-in-out forwards;
+}
+
+/* Add animation delays for each letter */
+/* happy */
+.text .happy span:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.text .happy span:nth-child(2) {
+  animation-delay: 1s;
+}
+.text .happy span:nth-child(3) {
+  animation-delay: 1.5s;
+}
+.text .happy span:nth-child(4) {
+  animation-delay: 2s;
+}
+.text .happy span:nth-child(5) {
+  animation-delay: 2.5s;
+}
+/* birthday */
+.text .birthday span:nth-child(1) {
+  animation-delay: 3s;
+}
+.text .birthday span:nth-child(2) {
+  animation-delay: 3.5s;
+}
+.text .birthday span:nth-child(3) {
+  animation-delay: 4s;
+}
+.text .birthday span:nth-child(4) {
+  animation-delay: 4.5s;
+}
+.text .birthday span:nth-child(5) {
+  animation-delay: 5s;
+}
+.text .birthday span:nth-child(6) {
+  animation-delay: 5.5s;
+}
+.text .birthday span:nth-child(7) {
+  animation-delay: 6s;
+}
+.text .birthday span:nth-child(8) {
+  animation-delay: 6.5s;
+}
+
+/* Animation for each letter */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+/* Animation for final appearance */
+.show {
+  animation-delay: 8s;
+  animation-fill-mode: forwards;
+  animation: showAll 1s ease-in-out;
+}
+
+@keyframes showAll {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* container button */
+.container-button {
+  margin-top: 30px;
+  /* border: 1px solid blue; */
+  height: max-content;
+  opacity: 0; /* Start with hidden buttons */
+  transform: translateY(20px);
+  visibility: hidden;
+  animation: showAll 1s ease-in-out;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  pointer-events: auto;
+}
+
+.container-button.visible {
+  opacity: 1;
+  transform: translateY(0); /* Button moves to its original position */
+  visibility: visible; /* Make button visible */
+}
+
+/* button */
+.btn {
+  border: none;
+  width: 15em;
+  height: 5em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #1c1a1c;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: linear-gradient(0deg, #a47cf3, #683fea);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917ff !important;
+  transform: translateY(-2px);
+}
+
+.button-text {
+  font-weight: 600;
+  color: #aaaaaa;
+  font-size: 20px;
+}
+
+.btn:hover .button-text {
+  color: white;
+}
+
+/* tab */
+@media screen and (max-width: 900px) {
+  .text {
+    font-size: 4rem; /* Ukuran font lebih kecil untuk tablet */
+  }
+
+  .text span {
+    margin-right: 15px; /* Mengurangi jarak antar span pada tablet */
+  }
+}
+
+/* Mobile (iPhone 15) specific styles */
+@media screen and (max-width: 480px) {
+  .text {
+    font-size: 3em; /* Reduce text size for smaller screens */
+    gap: 0.8rem; /* Reduce gap between letters */
+  }
+
+  .text .happy {
+    /* border: 1px solid blue; */
+    padding-left: 20px;
+  }
+
+  .text .birthday {
+    display: flex; /* Pastikan flexbox digunakan */
+    font-size: 2.5rem;
+    gap: 0.3em; /* Beri jarak antar elemen dalam flex container */
+    /* border: 1px solid red; */
+    justify-content: center; /* Jika diperlukan, pusatkan elemen */
+    padding-left: 10px;
+  }
+
+  .text span {
+    margin-right: 10px; /* Adjust the spacing between letters */
+  }
+
+  .main-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .container-button {
+    margin-top: 20px; /* Reduce margin for buttons */
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    animation: showAll 1s ease-in-out;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
+  .container-button.visible {
+    opacity: 1;
+    transform: translateY(0); /* Button moves to its original position */
+    visibility: visible; /* Make button visible */
+  }
+
+  .btn {
+    width: 12em; /* Smaller buttons for mobile */
+    height: 4em; /* Adjust height for buttons */
+    font-size: 16px; /* Adjust text size */
+  }
+
+  .button-text {
+    font-size: 16px; /* Smaller font size for mobile */
+  }
+
+  .btn:hover {
+    box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+      inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+      0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 100px 0px #9917ff;
+    background-color: #683fea; /* Tambahan untuk uji hover */
+    color: white;
+  }
+
+  /* Adjust spacing for small screens */
+  .main-container .happy,
+  .main-container .birthday {
+    margin-bottom: 10px;
+  }
+}
