@@ -28,7 +28,7 @@
   font-size: 6rem;
   font-weight: bold;
   gap: 1rem;
-  color: rgb(255, 0, 255);
+  color: rgb(229, 110, 148);
   /* border: 1px solid red; */
 }
 
@@ -51,53 +51,67 @@
   opacity: 0;
   transform: scale(0.5);
   animation: fadeInOut 1.5s ease-in-out forwards;
+  -webkit-animation: fadeInOut 1.5s ease-in-out forwards;
 }
 
 /* Add animation delays for each letter */
 /* happy */
 .text .happy span:nth-child(1) {
   animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
 }
 .text .happy span:nth-child(2) {
   animation-delay: 1s;
+  -webkit-animation-delay: 1s;
 }
 .text .happy span:nth-child(3) {
   animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
 }
 .text .happy span:nth-child(4) {
   animation-delay: 2s;
+  -webkit-animation-delay: 2s;
 }
 .text .happy span:nth-child(5) {
   animation-delay: 2.5s;
+  -webkit-animation-delay: 2.5s;
 }
 /* birthday */
 .text .birthday span:nth-child(1) {
   animation-delay: 3s;
+  -webkit-animation-delay: 3s;
 }
 .text .birthday span:nth-child(2) {
   animation-delay: 3.5s;
+  -webkit-animation-delay: 3.5s;
 }
 .text .birthday span:nth-child(3) {
   animation-delay: 4s;
+  -webkit-animation-delay: 4s;
 }
 .text .birthday span:nth-child(4) {
   animation-delay: 4.5s;
+  -webkit-animation-delay: 4.5s;
 }
 .text .birthday span:nth-child(5) {
   animation-delay: 5s;
+  -webkit-animation-delay: 5s;
 }
 .text .birthday span:nth-child(6) {
   animation-delay: 5.5s;
+  -webkit-animation-delay: 5.5s;
 }
 .text .birthday span:nth-child(7) {
   animation-delay: 6s;
+  -webkit-animation-delay: 6s;
 }
 .text .birthday span:nth-child(8) {
   animation-delay: 6.5s;
+  -webkit-animation-delay: 6.5s;
 }
 
 /* Animation for each letter */
-@keyframes fadeInOut {
+@-webkit-keyframes fadeInOut {
   0% {
     opacity: 0;
     transform: scale(0.5);
@@ -139,6 +153,7 @@
   transform: translateY(20px);
   visibility: hidden;
   animation: showAll 1s ease-in-out;
+  -webkit-animation: showAll 1s ease-in-out;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   pointer-events: auto;
 }
