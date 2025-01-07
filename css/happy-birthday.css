@@ -125,7 +125,7 @@
     -webkit-transform: scale(1.2); /* Safari */
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     transform: scale(0.8);
     -webkit-transform: scale(0.8); /* Safari */
   }
@@ -150,7 +150,7 @@
 .show {
   animation-delay: 8s;
   animation-fill-mode: forwards;
-  animation: showAll 1s ease-in-out;
+  /* animation: showAll 1s ease-in-out; */
 }
 
 @keyframes showAll {
